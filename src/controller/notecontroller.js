@@ -286,9 +286,10 @@ const recoverAllBinItems = async (req, res) => {
 
         const recoveredNotes = [];
         for (const binItem of notes) {
-            const { originalNoteId, user, noteTitle, description, isPriority, noteColor, isArchive, createdAt, updatedAt } = binItem;
+            const { _id, user, noteTitle, description, isPriority, noteColor, isArchive, createdAt, updatedAt } = binItem;
 
             const recoveredNote = new Note({
+                _id,
                 user,
                 noteTitle,
                 description,
